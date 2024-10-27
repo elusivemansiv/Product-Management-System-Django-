@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ casing.product_name }}
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center">{{ casing.product_name }}</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ casing.image.url }}" class="card-img-top" alt="{{ casing.product_name }}">
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text"><strong>Name:</strong> {{ casing.product_name }}</p>
+                        <p class="card-text"><strong>Model:</strong> {{ casing.product_model }}</p>
+                        <p class="card-text"><strong>Color:</strong> {{ casing.color }}</p>
+                        <p class="card-text"><strong>Details:</strong> {{ casing.details }}</p>
+                        <p class="card-text text-muted"><strong>Price:</strong> {{ casing.price }} Taka</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

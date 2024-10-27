@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Casing | ARS Imports
+{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <h2>Casings</h2>
+        <br>
+    </div>
+
+    <div class="row mt-5">
+        {% for casing in casings %}
+            <div class="col-md-4 mb-4">  <!-- Added margin-bottom for spacing -->
+                <div class="card">
+                   
+                        <img src="{{ casing.image.url }}" class="card-img-top" alt="{{ casing.product_name }}">
+                   
+                    <div class="card-body">
+                        <a href="{% url 'gamecase_page' casing.slug %}">
+                           <h5 class="card-title">{{ casing.product_name }}</h5>
+                       </a>
+                       
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>No products available at the moment.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
